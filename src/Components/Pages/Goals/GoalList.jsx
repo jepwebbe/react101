@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { Link, Outlet } from "react-router-dom"
 import appService from '../../App/Appservices/AppService';
-
+import "./GoalList.scss";
 import { Page } from '../../App/Layout/Page'
 
 export const GoalList = () => {
