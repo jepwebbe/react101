@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useNavigate } from "react-router-dom"
 import appService from '../../App/Appservices/AppService';
 import "./GoalList.scss";
 import { Page } from '../../App/Layout/Page'
@@ -24,7 +24,10 @@ export const GoalList = () => {
         };
         getData();
     }, [])
+    const navigate = useNavigate();
     return (
+        <>
+        <button onClick={() => navigate(-1)}>Tilbage til hjem</button>
         <Page title="Produkter" description="Se vores skønne produkter">
             <ul>
                 {apiData ?
@@ -38,5 +41,6 @@ export const GoalList = () => {
             <Outlet />
 
             </Page>
+            </>
     )
 }

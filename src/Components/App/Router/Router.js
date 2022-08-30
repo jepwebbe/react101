@@ -1,17 +1,22 @@
 import { Routes, Route } from 'react-router-dom'
-import { About } from '../../Pages/About'
-import { Contact } from '../../Pages/Contact'
+
+import { Hjem } from "../../Pages/Hjem"
+import { Om } from '../../Pages/Om'
+import { Tekster } from '../../Pages/Tekster'
+import { Web } from '../../Pages/Web'
+
 import { GoalDetails } from '../../Pages/Goals/GoalDetails'
 import { GoalList } from '../../Pages/Goals/GoalList'
-import { Home } from "../../Pages/Home"
+
 import { Notfound } from "../../Pages/Notfound"
 
 export const Router = () => {
     return (
         <Routes>
-            <Route index path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route index path="/" element={<Hjem />} />
+            <Route path="/web" element={<Web />} />
+            <Route path="/tekster" element={<Tekster />} />
+            <Route path="/om" element={<Om />} />
             <Route path="goals" element={<GoalList />} >
                 <Route path=":id" element={<GoalDetails />} />
             </Route>
